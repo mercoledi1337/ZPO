@@ -18,14 +18,19 @@ public class ProgramRGB()
         };
         serialPort.DataReceived += SerialDataRecieved;
         serialPort.Open();
-        Console.Read();
-        serialPort.Close();
+        
     }
 
     public void SerialDataRecieved(object sender, SerialDataReceivedEventArgs e)
     {
         string inData = serialPort.ReadLine();
-        Console.WriteLine($"Data Received: {inData}");
+
         
+            Console.WriteLine($"Data Received: {inData}");
+    }
+
+    public void SerialDataSender(string color)
+    {
+        serialPort.Write(color);
     }
 }
