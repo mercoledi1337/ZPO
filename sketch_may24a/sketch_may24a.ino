@@ -20,21 +20,20 @@ void loop() {
 
     if (Serial.available() > 0) {
 for (int i=0; i<3; i++) {
-if (r != 0 || b != 0 || g != 0) {
-      // here you could check the servo number
       String pos = Serial.readStringUntil('&');
       delay(10);
       int int_pos=pos.toInt();
       rgb[i] = int_pos;
       Serial.println(rgb[i]);
-delay(10);
-
+      delay(10);
+  }
+  String stop = Serial.readString();
 }
   for (int i = 0; i < 8; i++) {
       linijka.setPixelColor(i, linijka.Color(rgb[0], rgb[1], rgb[2])); //Dioda nr i świeci na wybrany kolor
     }
     
     linijka.show(); 
-  }
-    }
+  
+    
 }
