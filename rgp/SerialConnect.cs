@@ -6,7 +6,6 @@ public class ProgramRGB()
 {
 
     private SerialPort serialPort { get; set; }
-
     
 
     public void MainInterface()
@@ -23,11 +22,13 @@ public class ProgramRGB()
 
     public void SerialDataRecieved(object sender, SerialDataReceivedEventArgs e)
     {
-        string inData = serialPort.ReadLine();
-
-        
-            Console.WriteLine($"Data Received: {inData}");
+        //string inData = serialPort.ReadLine();
+        //Console.WriteLine($"Data Received: {inData}");
     }
+
+    public string SerialTempPublisher() => serialPort.ReadLine();
+    
+
 
     public void SerialDataSender(string color)
     {

@@ -1,5 +1,6 @@
 using System.Buffers.Binary;
 using System.Runtime.InteropServices;
+using System.Xml.Linq;
 
 
 namespace rgp
@@ -21,6 +22,18 @@ namespace rgp
             static extern bool AllocConsole();
            
             tmp.MainInterface();
+
+            DayTemp baseDay = new DayTemp();
+            int temp;
+
+            
+            while (true)
+            {
+                string t = tmp.SerialTempPublisher();
+                temp = Int32.Parse(t.Substring(0, 2));
+                Thread.Sleep(30000);
+                Console.WriteLine(temp);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -53,8 +66,6 @@ namespace rgp
 
                 panel1.BackColor = rgb;
                 // reszta z dzielenia pokazuje który kolor podczas przesy³ania
-
-
 
                 tmp.SerialDataSender(color);
         }
