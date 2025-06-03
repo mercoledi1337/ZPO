@@ -1,4 +1,5 @@
 using System.Buffers.Binary;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Xml.Linq;
 
@@ -9,30 +10,33 @@ namespace rgp
 
     public partial class Form1 : Form
     {
-        int r = 0;
-        int g = 0;
-        int b = 0;
+
         ProgramRGB tmp = new ProgramRGB();
+        LEdsRGB leds = new LEdsRGB();
+        LEdsRGB[] lEdsRGBs = new LEdsRGB[20];
+        
+
         public Form1()
         {
             InitializeComponent();
+
             AllocConsole();
             [DllImport("kernel32.dll", SetLastError = true)]
             [return: MarshalAs(UnmanagedType.Bool)]
             static extern bool AllocConsole();
-           
-            tmp.MainInterface();
 
-            DayTemp baseDay = new DayTemp();
             int temp;
 
-            
+
+            tmp.MainInterface();
             while (true)
             {
+
                 string t = tmp.SerialTempPublisher();
                 temp = Int32.Parse(t.Substring(0, 2));
-                Thread.Sleep(30000);
-                Console.WriteLine(temp);
+                Thread.Sleep(300);
+                break;
+                //Console.WriteLine(temp);
             }
         }
 
@@ -54,23 +58,55 @@ namespace rgp
 
         private void button1_Click(object sender, EventArgs e)
         {
-        
-                string color = textBox1.Text + "&" + textBox2.Text + "&" + textBox3.Text + "&#";
-                r = Int32.Parse(textBox1.Text);
-                g = Int32.Parse(textBox2.Text);
-                b = Int32.Parse(textBox3.Text);
+
+            string color = textBox1.Text + "&" + textBox2.Text + "&" + textBox3.Text + "&#";
+
+
+            int r = Int32.Parse(textBox1.Text);
+            int g = Int32.Parse(textBox2.Text);
+            int b = Int32.Parse(textBox3.Text);
 
 
 
-                Color rgb = Color.FromArgb(r, g, b);
+            Color rgb = Color.FromArgb(r, g, b);
+            tmp.SerialDataSender(color);
+            panel1.BackColor = rgb;
+            //reszta z dzielenia pokazuje który kolor podczas przesy³ania
 
-                panel1.BackColor = rgb;
-                // reszta z dzielenia pokazuje który kolor podczas przesy³ania
 
-                tmp.SerialDataSender(color);
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            leds.set(Int32.Parse(textBox1.Text), Int32.Parse(textBox2.Text), Int32.Parse(textBox3.Text));
+            string label = "";
+            label += leds.get()[0] + ", " + leds.get()[1] + ", " + leds.get()[2];
+            comboBox1.Items.Add(label);
+            comboBox1.BackColor = Color.White;
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //elements in combobox drawing
+
+        private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            Color color;
+            //Text of your ComboBox element
+            string text = ((ComboBox)sender).Items[0].ToString();
+            //Check for something
+           
+                color = Color.Red;
+           
+            e.Graphics.FillRectangle(new SolidBrush(color), e.Bounds);
+            e.Graphics.DrawString(text, e.Font, new SolidBrush(((ComboBox)sender).ForeColor), new Point(e.Bounds.X, e.Bounds.Y));
+            e.DrawFocusRectangle();
+        }
     }
 }
 

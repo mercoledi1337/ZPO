@@ -7,8 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rgp", "rgp.csproj", "{88B1E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "Elementy rozwiązania", "{A71B6D4A-6B76-44FF-9DB9-9509C506D4CB}"
 	ProjectSection(SolutionItems) = preProject
-		Class1.cs = Class1.cs
+		ArduinoDevice.cs = ArduinoDevice.cs
 		DayTemp.cs = DayTemp.cs
+		IArduinoDevice.cs = IArduinoDevice.cs
+		LedsRGB.cs = LedsRGB.cs
 	EndProjectSection
 EndProject
 Global
