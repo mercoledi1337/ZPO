@@ -36,3 +36,4 @@ D:\zpooo\rgp\obj\Debug\net8.0-windows\refint\rgp.dll
 D:\zpooo\rgp\obj\Debug\net8.0-windows\rgp.pdb
 D:\zpooo\rgp\obj\Debug\net8.0-windows\rgp.genruntimeconfig.cache
 D:\zpooo\rgp\obj\Debug\net8.0-windows\ref\rgp.dll
+D:\zpooo\rgp\bin\Debug\net8.0-windows\Newtonsoft.Json.dll

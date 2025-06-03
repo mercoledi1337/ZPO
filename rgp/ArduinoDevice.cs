@@ -2,7 +2,7 @@
 
 public class ArduinoDevice : IArduinoDevice
 {
-    Guid index;
+    public Guid index;
 	public ArduinoDevice()
 	{
         index = new Guid();

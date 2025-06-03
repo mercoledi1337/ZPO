@@ -1,6 +1,10 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.Buffers.Binary;
 using System.Drawing;
+using System.IO;
 using System.Runtime.InteropServices;
+using System.Text.Json;
 using System.Xml.Linq;
 
 
@@ -14,7 +18,12 @@ namespace rgp
         ProgramRGB tmp = new ProgramRGB();
         LEdsRGB leds = new LEdsRGB();
         LEdsRGB[] lEdsRGBs = new LEdsRGB[20];
-        
+
+        static string workingDirectory = Directory.GetCurrentDirectory();
+        // or: Directory.GetCurrentDirectory() gives the same result
+
+        // This will get the current PROJECT directory
+        string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
 
         public Form1()
         {
@@ -27,7 +36,7 @@ namespace rgp
 
             int temp;
 
-
+            
             tmp.MainInterface();
             while (true)
             {
@@ -83,7 +92,18 @@ namespace rgp
             label += leds.get()[0] + ", " + leds.get()[1] + ", " + leds.get()[2];
             comboBox1.Items.Add(label);
             comboBox1.BackColor = Color.White;
+            string rgbToJson = JsonConvert.SerializeObject(leds.get());
 
+
+
+            Newtonsoft.Json.JsonSerializer serializer = new Newtonsoft.Json.JsonSerializer();
+            serializer.Converters.Add(new JavaScriptDateTimeConverter());
+            serializer.NullValueHandling = NullValueHandling.Ignore;
+            using (StreamWriter sw = new StreamWriter(projectDirectory + ".txt"))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(writer, leds);
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
