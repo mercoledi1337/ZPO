@@ -16,7 +16,7 @@ namespace rgp
     {
         static string path = @"D:\rgbJson.json";
         ProgramRGB tmp = new ProgramRGB();
-        LEdsRGB leds = new LEdsRGB();
+
         List<LEdsRGB> LedsRGBs = new List<LEdsRGB>();
 
         static string workingDirectory = Directory.GetCurrentDirectory();
@@ -55,11 +55,15 @@ namespace rgp
 
 
             List<LEdsRGB> led = JsonConvert.DeserializeObject<List<LEdsRGB>>(rgbFromJson);
-            foreach (var item in led)
+            if (led != null)
             {
-                string label = "";
-                label += item.get()[0] + ", " + item.get()[1] + ", " + item.get()[2];
-                comboBox1.Items.Add(label);
+                foreach (var item in led)
+                {
+                    string label = "";
+                    label += item.get()[0] + ", " + item.get()[1] + ", " + item.get()[2];
+                    comboBox1.Items.Add(label);
+                    LedsRGBs.Add(item);
+                }
             }
         }
 
@@ -95,6 +99,7 @@ namespace rgp
 
         private void button2_Click(object sender, EventArgs e)
         {
+            LEdsRGB leds = new LEdsRGB();
             leds.set(Int32.Parse(textBox1.Text), Int32.Parse(textBox2.Text), Int32.Parse(textBox3.Text));
             string label = "";
             label += leds.get()[0] + ", " + leds.get()[1] + ", " + leds.get()[2];
@@ -107,7 +112,15 @@ namespace rgp
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int selectedIndex = comboBox1.SelectedIndex;
+            Object selectedItem = comboBox1.SelectedItem;
+            string rgbFromComboBox = selectedItem.ToString();
+            string[] tmpRgb = rgbFromComboBox.Split(',');
+            Color rgb = Color.FromArgb(Int32.Parse(tmpRgb[0]), Int32.Parse(tmpRgb[1]), Int32.Parse(tmpRgb[2]));
+            panel1.BackColor = rgb;
+            textBox1.Text = tmpRgb[0];
+            textBox2.Text = tmpRgb[1];
+            textBox3.Text = tmpRgb[2];
         }
 
         //elements in combobox drawing
