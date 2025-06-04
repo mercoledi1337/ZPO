@@ -11,16 +11,20 @@
       "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|d:\\zpooo\\rgp\\arduinodevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:arduinodevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|d:\\zpooo\\rgp\\serialconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:serialconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|d:\\zpooo\\rgp\\daytemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:daytemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|d:\\zpooo\\rgp\\ledsrgb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:ledsrgb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|d:\\zpooo\\rgp\\daytemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:daytemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|d:\\zpooo\\rgp\\arduinodevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:arduinodevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,19 +47,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "SerialConnect.cs",
+              "DocumentMoniker": "D:\\zpooo\\rgp\\SerialConnect.cs",
+              "RelativeDocumentMoniker": "SerialConnect.cs",
+              "ToolTip": "D:\\zpooo\\rgp\\SerialConnect.cs",
+              "RelativeToolTip": "SerialConnect.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAxwCIAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T19:35:03.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ArduinoDevice.cs",
               "DocumentMoniker": "D:\\zpooo\\rgp\\ArduinoDevice.cs",
               "RelativeDocumentMoniker": "ArduinoDevice.cs",
               "ToolTip": "D:\\zpooo\\rgp\\ArduinoDevice.cs",
               "RelativeToolTip": "ArduinoDevice.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAALAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-03T20:15:02.577Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "LedsRGB.cs",
               "DocumentMoniker": "D:\\zpooo\\rgp\\LedsRGB.cs",
               "RelativeDocumentMoniker": "LedsRGB.cs",
@@ -68,7 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "DayTemp.cs",
               "DocumentMoniker": "D:\\zpooo\\rgp\\DayTemp.cs",
               "RelativeDocumentMoniker": "DayTemp.cs",
@@ -87,7 +104,7 @@
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "D:\\zpooo\\rgp\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAcwGgAAAAzAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAAgwD0AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T11:35:24.988Z",
               "EditorCaption": ""

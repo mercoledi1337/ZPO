@@ -14,10 +14,10 @@ namespace rgp
 
     public partial class Form1 : Form
     {
-
+        static string path = @"D:\rgbJson.json";
         ProgramRGB tmp = new ProgramRGB();
         LEdsRGB leds = new LEdsRGB();
-        LEdsRGB[] lEdsRGBs = new LEdsRGB[20];
+        List<LEdsRGB> LedsRGBs = new List<LEdsRGB>();
 
         static string workingDirectory = Directory.GetCurrentDirectory();
         // or: Directory.GetCurrentDirectory() gives the same result
@@ -38,21 +38,29 @@ namespace rgp
 
             
             tmp.MainInterface();
-            while (true)
-            {
+            //while (true)
+            //{
 
-                string t = tmp.SerialTempPublisher();
-                temp = Int32.Parse(t.Substring(0, 2));
-                Thread.Sleep(300);
-                break;
-                //Console.WriteLine(temp);
-            }
+            //    string t = tmp.SerialTempPublisher();
+            //    temp = Int32.Parse(t.Substring(0, 2));
+            //    Thread.Sleep(300);
+            //    break;
+            //    //Console.WriteLine(temp);
+            //}
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string rgbFromJson = File.ReadAllText(path);
 
 
+            List<LEdsRGB> led = JsonConvert.DeserializeObject<List<LEdsRGB>>(rgbFromJson);
+            foreach (var item in led)
+            {
+                string label = "";
+                label += item.get()[0] + ", " + item.get()[1] + ", " + item.get()[2];
+                comboBox1.Items.Add(label);
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -92,18 +100,9 @@ namespace rgp
             label += leds.get()[0] + ", " + leds.get()[1] + ", " + leds.get()[2];
             comboBox1.Items.Add(label);
             comboBox1.BackColor = Color.White;
-            string rgbToJson = JsonConvert.SerializeObject(leds.get());
-
-
-
-            Newtonsoft.Json.JsonSerializer serializer = new Newtonsoft.Json.JsonSerializer();
-            serializer.Converters.Add(new JavaScriptDateTimeConverter());
-            serializer.NullValueHandling = NullValueHandling.Ignore;
-            using (StreamWriter sw = new StreamWriter(projectDirectory + ".txt"))
-            using (JsonWriter writer = new JsonTextWriter(sw))
-            {
-                serializer.Serialize(writer, leds);
-            }
+            LedsRGBs.Add(leds);
+            string rgbToJson = JsonConvert.SerializeObject(LedsRGBs, Formatting.Indented);
+            File.WriteAllText(path, rgbToJson);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
