@@ -24,7 +24,15 @@ namespace rgp
 
         // This will get the current PROJECT directory
         string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-
+        public async Task temperatura(int temp, string t)
+        {
+            while (true) {
+                temp = Int32.Parse(t.Substring(0, 2));
+                Thread.Sleep(500);
+                label1.Text = t;
+                break;
+            }
+        }
         public Form1()
         {
             InitializeComponent();
@@ -34,22 +42,21 @@ namespace rgp
             [return: MarshalAs(UnmanagedType.Bool)]
             static extern bool AllocConsole();
 
-            int temp;
-
-            
+            int temp = 0;
             tmp.MainInterface();
-            //while (true)
-            //{
+            tmp.SerialTempPublisher();
+            string t = tmp.SerialTempPublisher();
+           _ = temperatura(temp, t);
 
-            //    string t = tmp.SerialTempPublisher();
-            //    temp = Int32.Parse(t.Substring(0, 2));
-            //    Thread.Sleep(300);
-            //    break;
-            //    //Console.WriteLine(temp);
-            //}
+
+
+
+
+
+
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
             string rgbFromJson = File.ReadAllText(path);
 
@@ -65,6 +72,7 @@ namespace rgp
                     LedsRGBs.Add(item);
                 }
             }
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
