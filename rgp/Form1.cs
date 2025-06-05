@@ -11,39 +11,29 @@ using System.Collections.Generic;
 
 namespace rgp
 {
-
-
     public partial class Form1 : Form
     {
-
         static string path = @"D:\rgbJson.json";
         ProgramRGB tmp = new ProgramRGB();
-
         List<LEdsRGB> LedsRGBs = new List<LEdsRGB>();
         List<DayTemp> temperatura = new List<DayTemp>();
-
-        static string workingDirectory = Directory.GetCurrentDirectory();
 
         public Form1()
         {
             InitializeComponent();
-
             AllocConsole();
             [DllImport("kernel32.dll", SetLastError = true)]
             [return: MarshalAs(UnmanagedType.Bool)]
             static extern bool AllocConsole();
-            label2.Text = "temperatura ok";
 
+            label2.Text = "temperatura ok";
             tmp.MainInterface();
             Task.Factory.StartNew(() =>
             {
-                
                 while (true)
                 {
                     tmp.SerialTempPublisher();
                     string t = tmp.SerialTempPublisher();
-
-
                     label1.Invoke(new Action(delegate ()
                     {
                         label1.Text = t;
@@ -101,22 +91,15 @@ namespace rgp
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             string color = textBox1.Text + "&" + textBox2.Text + "&" + textBox3.Text + "&#";
-
 
             int r = Int32.Parse(textBox1.Text);
             int g = Int32.Parse(textBox2.Text);
             int b = Int32.Parse(textBox3.Text);
 
-
-
             Color rgb = Color.FromArgb(r, g, b);
             tmp.SerialDataSender(color);
             panel1.BackColor = rgb;
-            //reszta z dzielenia pokazuje który kolor podczas przesy³ania
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -145,26 +128,21 @@ namespace rgp
             textBox3.Text = tmpRgb[2];
         }
 
-        //elements in combobox drawing
-
         private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
         {
-            e.DrawBackground();
-            Color color;
-            //Text of your ComboBox element
-            string text = ((ComboBox)sender).Items[0].ToString();
-            //Check for something
+        //    e.DrawBackground();
+        //    Color color;
+        //    string text = ((ComboBox)sender).Items[0].ToString();
 
-            color = Color.Red;
+        //    color = Color.Red;
 
-            e.Graphics.FillRectangle(new SolidBrush(color), e.Bounds);
-            e.Graphics.DrawString(text, e.Font, new SolidBrush(((ComboBox)sender).ForeColor), new Point(e.Bounds.X, e.Bounds.Y));
-            e.DrawFocusRectangle();
+        //    e.Graphics.FillRectangle(new SolidBrush(color), e.Bounds);
+        //    e.Graphics.DrawString(text, e.Font, new SolidBrush(((ComboBox)sender).ForeColor), new Point(e.Bounds.X, e.Bounds.Y));
+        //    e.DrawFocusRectangle();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
             if (temperatura.Count != 0)
             {
                 int t2132 = temperatura[0].Temp;
