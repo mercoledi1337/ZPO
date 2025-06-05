@@ -4,9 +4,10 @@ using System.Buffers.Binary;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 using System.Xml.Linq;
-
+using System.Collections.Generic;
 
 namespace rgp
 {
@@ -14,25 +15,15 @@ namespace rgp
 
     public partial class Form1 : Form
     {
+
         static string path = @"D:\rgbJson.json";
         ProgramRGB tmp = new ProgramRGB();
 
         List<LEdsRGB> LedsRGBs = new List<LEdsRGB>();
+        List<DayTemp> temperatura = new List<DayTemp>();
 
         static string workingDirectory = Directory.GetCurrentDirectory();
-        // or: Directory.GetCurrentDirectory() gives the same result
 
-        // This will get the current PROJECT directory
-        string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-        public async Task temperatura(int temp, string t)
-        {
-            while (true) {
-                temp = Int32.Parse(t.Substring(0, 2));
-                Thread.Sleep(500);
-                label1.Text = t;
-                break;
-            }
-        }
         public Form1()
         {
             InitializeComponent();
@@ -42,21 +33,38 @@ namespace rgp
             [return: MarshalAs(UnmanagedType.Bool)]
             static extern bool AllocConsole();
 
-            int temp = 0;
+
             tmp.MainInterface();
-            tmp.SerialTempPublisher();
-            string t = tmp.SerialTempPublisher();
-           _ = temperatura(temp, t);
+            Task.Factory.StartNew(() =>
+            {
+                while (true)
+                {
+                    tmp.SerialTempPublisher();
+                    string t = tmp.SerialTempPublisher();
 
 
-
-
-
-
-
+                    label1.Invoke(new Action(delegate ()
+                    {
+                        label1.Text = t;
+                    }));
+                    Task.Delay(1000);
+                    if (Int32.Parse(t.Substring(0, 2)) >= 26)
+                    {
+                        DayTemp temp = new DayTemp();
+                        temp.Temp = Int32.Parse(t.Substring(0, 2));
+                        
+                        label2.Invoke(new Action(delegate ()
+                        {
+                            temp.Temp = Int32.Parse(t.Substring(0, 2));
+                            label2.Text = "za gor¹co!";
+                            temperatura.Add(temp);
+                        }));
+                    }
+                }
+            });
         }
 
-        private async void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             string rgbFromJson = File.ReadAllText(path);
 
@@ -72,7 +80,7 @@ namespace rgp
                     LedsRGBs.Add(item);
                 }
             }
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -140,12 +148,24 @@ namespace rgp
             //Text of your ComboBox element
             string text = ((ComboBox)sender).Items[0].ToString();
             //Check for something
-           
-                color = Color.Red;
-           
+
+            color = Color.Red;
+
             e.Graphics.FillRectangle(new SolidBrush(color), e.Bounds);
             e.Graphics.DrawString(text, e.Font, new SolidBrush(((ComboBox)sender).ForeColor), new Point(e.Bounds.X, e.Bounds.Y));
             e.DrawFocusRectangle();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            if (temperatura.Count != 0)
+            {
+                int t2132 = temperatura[0].Temp;
+                List<DayTemp> max = temperatura.Where(x => x.Temp >= t2132).ToList();
+                max.Sort();
+                label3.Text = max[0].Temp.ToString();
+            }
         }
     }
 }

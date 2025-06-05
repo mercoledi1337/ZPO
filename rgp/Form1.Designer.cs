@@ -36,6 +36,9 @@
             label1 = new Label();
             button2 = new Button();
             comboBox1 = new ComboBox();
+            label2 = new Label();
+            button3 = new Button();
+            label3 = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -106,11 +109,42 @@
             comboBox1.DrawItem += comboBox1_DrawItem;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 24);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 15);
+            label2.TabIndex = 8;
+            label2.Text = "label2";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(12, 42);
+            button3.Name = "button3";
+            button3.Size = new Size(132, 23);
+            button3.TabIndex = 9;
+            button3.Text = "Pokaż max temperature";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 68);
+            label3.Name = "label3";
+            label3.Size = new Size(38, 15);
+            label3.TabIndex = 10;
+            label3.Text = "label3";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
+            Controls.Add(button3);
+            Controls.Add(label2);
             Controls.Add(comboBox1);
             Controls.Add(button2);
             Controls.Add(label1);
@@ -136,5 +170,8 @@
         private Label label1;
         private Button button2;
         private ComboBox comboBox1;
+        private Label label2;
+        private Button button3;
+        private Label label3;
     }
 }
