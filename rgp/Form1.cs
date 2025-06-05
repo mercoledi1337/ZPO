@@ -32,11 +32,12 @@ namespace rgp
             [DllImport("kernel32.dll", SetLastError = true)]
             [return: MarshalAs(UnmanagedType.Bool)]
             static extern bool AllocConsole();
-
+            label2.Text = "temperatura ok";
 
             tmp.MainInterface();
             Task.Factory.StartNew(() =>
             {
+                
                 while (true)
                 {
                     tmp.SerialTempPublisher();
@@ -48,17 +49,23 @@ namespace rgp
                         label1.Text = t;
                     }));
                     Task.Delay(1000);
-                    if (Int32.Parse(t.Substring(0, 2)) >= 26)
+                    try
                     {
-                        DayTemp temp = new DayTemp();
-                        temp.Temp = Int32.Parse(t.Substring(0, 2));
-                        
-                        label2.Invoke(new Action(delegate ()
+                        if (Int32.Parse(t.Substring(0, 2)) >= 20)
                         {
+                            DayTemp temp = new DayTemp();
                             temp.Temp = Int32.Parse(t.Substring(0, 2));
-                            label2.Text = "za gor¹co!";
-                            temperatura.Add(temp);
-                        }));
+
+                            label2.Invoke(new Action(delegate ()
+                            {
+                                temp.Temp = Int32.Parse(t.Substring(0, 2));
+                                label2.Text = "za gor¹co!";
+                                temperatura.Add(temp);
+                            }));
+                        }
+                    }catch (Exception ex)
+                    {
+
                     }
                 }
             });
@@ -68,7 +75,7 @@ namespace rgp
         {
             string rgbFromJson = File.ReadAllText(path);
 
-
+            label3.Text = "";
             List<LEdsRGB> led = JsonConvert.DeserializeObject<List<LEdsRGB>>(rgbFromJson);
             if (led != null)
             {
@@ -80,7 +87,6 @@ namespace rgp
                     LedsRGBs.Add(item);
                 }
             }
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
