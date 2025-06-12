@@ -16,8 +16,10 @@ public class ProgramRGB()
             BaudRate = 9600
         };
         serialPort.DataReceived += SerialDataRecieved;
-
-        serialPort.Open();
+        try
+        {
+            serialPort.Open();
+        }catch (Exception ex) { }
         
     }
 
@@ -27,19 +29,21 @@ public class ProgramRGB()
         //Console.WriteLine($"Data Received: {inData}");
     }
 
-    public string SerialTempPublisher() => serialPort.ReadLine();
+    public string SerialTempPublisher()
+    { try
+        {
+            return serialPort.ReadLine();
+        }
+        catch
+        {
+            return "999";
+        }
+    }
     
 
 
     public void SerialDataSender(string color)
     {
-        try
-        {
             serialPort.Write(color);
-        } catch (NullReferenceException ex)
-        { 
-            
-        }
-        
     }
 }
