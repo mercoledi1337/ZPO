@@ -16,6 +16,7 @@ public class ProgramRGB()
             BaudRate = 9600
         };
         serialPort.DataReceived += SerialDataRecieved;
+
         serialPort.Open();
         
     }
@@ -32,6 +33,13 @@ public class ProgramRGB()
 
     public void SerialDataSender(string color)
     {
-        serialPort.Write(color);
+        try
+        {
+            serialPort.Write(color);
+        } catch (NullReferenceException ex)
+        { 
+            
+        }
+        
     }
 }

@@ -7,28 +7,32 @@
       "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|d:\\zpooo\\rgp\\daytemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:daytemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|D:\\zpooo\\rgp\\serialconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:serialconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|D:\\zpooo\\rgp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|d:\\zpooo\\rgp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|D:\\zpooo\\rgp\\daytemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:daytemp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|d:\\zpooo\\rgp\\serialconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:serialconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|d:\\zpooo\\rgp\\ledsrgb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|D:\\zpooo\\rgp\\ledsrgb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:ledsrgb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|d:\\zpooo\\rgp\\arduinodevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|D:\\zpooo\\rgp\\arduinodevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:arduinodevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|D:\\zpooo\\rgp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|d:\\zpooo\\rgp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88B1E63B-4F40-4935-AF8E-5EBC3D235234}|rgp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,33 +54,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\zpooo\\rgp\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\zpooo\\rgp\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T18:28:06.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "D:\\zpooo\\rgp\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
               "ToolTip": "D:\\zpooo\\rgp\\Form1.Designer.cs",
               "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAwwBIAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T16:23:09.808Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "SerialConnect.cs",
               "DocumentMoniker": "D:\\zpooo\\rgp\\SerialConnect.cs",
               "RelativeDocumentMoniker": "SerialConnect.cs",
               "ToolTip": "D:\\zpooo\\rgp\\SerialConnect.cs",
               "RelativeToolTip": "SerialConnect.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAArAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAApwCUAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-03T19:35:03.88Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "ArduinoDevice.cs",
               "DocumentMoniker": "D:\\zpooo\\rgp\\ArduinoDevice.cs",
               "RelativeDocumentMoniker": "ArduinoDevice.cs",
@@ -89,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "LedsRGB.cs",
               "DocumentMoniker": "D:\\zpooo\\rgp\\LedsRGB.cs",
               "RelativeDocumentMoniker": "LedsRGB.cs",
@@ -102,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "DayTemp.cs",
               "DocumentMoniker": "D:\\zpooo\\rgp\\DayTemp.cs",
               "RelativeDocumentMoniker": "DayTemp.cs",
@@ -119,9 +136,9 @@
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\zpooo\\rgp\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\zpooo\\rgp\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAIQAAAAAAAAAAAAUwI0AAAAAAAAA",
+              "ToolTip": "D:\\zpooo\\rgp\\Form1.cs*",
+              "RelativeToolTip": "Form1.cs*",
+              "ViewState": "AQIAAGQAAAAAAAAAAAAMwGsAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T11:35:24.988Z",
               "EditorCaption": ""
@@ -132,8 +149,8 @@
               "Title": "Form1.cs [Projekt]",
               "DocumentMoniker": "D:\\zpooo\\rgp\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\zpooo\\rgp\\Form1.cs [Projekt]",
-              "RelativeToolTip": "Form1.cs [Projekt]",
+              "ToolTip": "D:\\zpooo\\rgp\\Form1.cs [Projekt]*",
+              "RelativeToolTip": "Form1.cs [Projekt]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T11:55:25.334Z",
               "EditorCaption": " [Projekt]"
